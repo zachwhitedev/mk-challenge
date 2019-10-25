@@ -1,11 +1,28 @@
 .form {
   text-align: center;
-  margin: 0 auto;
-  width: 600px;
+  margin: 40px auto 0 auto;
+  padding: 10px 5px 40px 5px;
+  width: 325px;
   background-color: white;
+  border-radius: 8px;
 }
 
-@media (max-width: 600px) {
+.form > img {
+  max-width: 120px;
+  display: block;
+  margin: 0 auto;
+}
+
+.input {
+  display: block;
+}
+
+.form > button {
+  display: block;
+  margin: 20px auto 0 auto;
+}
+
+@media (max-width: 325px) {
   .form {
     width: 300px;
   }
