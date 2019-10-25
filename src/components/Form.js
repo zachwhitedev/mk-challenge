@@ -1,4 +1,5 @@
 import React from 'react';
+import TextField from '@material-ui/core/TextField';
 
 class Form extends React.Component {
     constructor(props){
@@ -9,13 +10,20 @@ class Form extends React.Component {
             email: '',
             message: '',
         }
+
+        this.handleFormChange = this.handleFormChange.bind(this);
+    }
+
+    handleFormChange(e){
+        this.setState({[e.target.name]: e.target.value})
     }
   render() {
 
-
     return (
       <div>
-          <h1>hello</h1>
+          <TextField /><br></br>
+          <TextField /><br></br>
+          <TextField /><br></br>
       </div>
     )
   }
