@@ -1,6 +1,11 @@
 body {
   margin: 0;
-  background: red;
+  background: #06beb6;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#48b1bf), to(#06beb6));
+  background: linear-gradient(to right, #48b1bf, #06beb6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-family: 'Open Sans', sans-serif;
 }
 /*# sourceMappingURL=index.css.map */
