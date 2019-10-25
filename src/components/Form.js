@@ -20,7 +20,7 @@ class Form extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className='form'>
           <TextField /><br></br>
           <TextField /><br></br>
           <TextField /><br></br>
