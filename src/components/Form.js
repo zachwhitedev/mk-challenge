@@ -11,10 +11,10 @@ class Form extends React.Component {
             name: '',
             email: '',
             message: '',
-            isConfirmed: false
         }
 
         this.handleFormChange = this.handleFormChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleFormChange(e){
@@ -27,9 +27,8 @@ class Form extends React.Component {
             email: this.state.email,
             message: this.state.message
         }
-        this.setState({
-            isConfirmed: !this.state.isConfirmed
-        })
+
+        this.props.confirm(true);
     }
 
 

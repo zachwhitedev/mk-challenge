@@ -1,6 +1,7 @@
 import React from 'react';
 import './css/App/App.css';
 import Form from './components/Form';
+import Confirmation from './components/Confirmation';
 
 class App extends React.Component {
 
@@ -24,6 +25,7 @@ class App extends React.Component {
     return (
       <div>
         {!this.state.isConfirmed && <Form confirm={this.handleConfirm}/>}
+        {this.state.isConfirmed && <Confirmation confirm={this.handleConfirm}/>}
       </div>
     )
   }
