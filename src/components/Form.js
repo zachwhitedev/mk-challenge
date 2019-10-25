@@ -1,6 +1,5 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Logo from '../assets/mk-logo.png';
 
@@ -9,7 +8,7 @@ class Form extends React.Component {
         super(props);
 
         this.state = {
-            name: 'Please enter your name.',
+            name: '',
             email: '',
             message: '',
         }
@@ -20,8 +19,9 @@ class Form extends React.Component {
     handleFormChange(e){
         this.setState({[e.target.name]: e.target.value})
     }
+
+
   render() {
-    const classes = useStyles();
 
     return (
         <div className='container'>
@@ -31,19 +31,28 @@ class Form extends React.Component {
                 className='input'
                 id='standard-name'
                 label='name'
+                name='name'
+                margin="normal"
+                onChange={this.handleFormChange}
             />
             <TextField 
                 className = 'input'
-                label='email'    
+                label='email'
+                name='email'   
+                margin="normal"
+                onChange={this.handleFormChange} 
             />
             <TextField 
                 className='input'
                 label='message'
+                name='message'
+                margin="normal"
+                onChange={this.handleFormChange}
                 multiline={true}
                 rows={2}
-                rowsMax={4}
+                rowsMax={3}
             />
-            <Button variant="contained" className={classes.button}>
+            <Button variant="contained">
                 Submit
             </Button>
         </div>
