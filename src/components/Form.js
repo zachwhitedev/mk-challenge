@@ -20,6 +20,14 @@ class Form extends React.Component {
         this.setState({[e.target.name]: e.target.value})
     }
 
+    handleSubmit(e){
+        let entry = {
+            name: this.state.name,
+            email: this.state.email,
+            message: this.state.message
+        }
+    }
+
 
   render() {
 
@@ -52,7 +60,7 @@ class Form extends React.Component {
                 rows={2}
                 rowsMax={3}
             />
-            <Button variant="contained">
+            <Button variant="contained" onClick={this.handleSubmit}>
                 Submit
             </Button>
         </div>
