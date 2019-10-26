@@ -19,7 +19,7 @@ class Form extends React.Component {
         }
 
         this.handleFormChange = this.handleFormChange.bind(this);
-        this.recordMessage = this.submitToAPI.bind(this);
+        this.recordMessage = this.recordMessage.bind(this);
     }
 
     handleFormChange(e){
