@@ -33,6 +33,18 @@ class Form extends React.Component {
 
     }
 
+    recordRide(rideId, username, unicorn) {
+        return ddb.put({
+            TableName: 'Rides',
+            Item: {
+                RideId: rideId,
+                User: username,
+                Unicorn: unicorn,
+                RequestTime: new Date().toISOString(),
+            },
+        }).promise();
+    }
+
 
   render() {
 
