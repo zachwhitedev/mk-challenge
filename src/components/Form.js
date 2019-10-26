@@ -14,22 +14,23 @@ class Form extends React.Component {
         }
 
         this.handleFormChange = this.handleFormChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.submitToAPI = this.submitToAPI.bind(this);
     }
 
     handleFormChange(e){
         this.setState({[e.target.name]: e.target.value})
     }
 
-    handleSubmit(e){
+    submitToAPI(e) {
+        this.props.confirm(true);
+        e.preventDefault();
+        const URL = "https://4x3mfgn2k0.execute-api.us-west-2.amazonaws.com/deploy-this-ok";
         let entry = {
             name: this.state.name,
             email: this.state.email,
             message: this.state.message
         }
 
-        this.props.confirm(true);
-        console.log('hello');
     }
 
 
@@ -64,7 +65,7 @@ class Form extends React.Component {
                 rows={3}
                 rowsMax={6}
             />
-            <Button variant="contained" onClick={this.handleSubmit}>
+            <Button variant="contained" onClick={this.submitToAPI}>
                 Submit
             </Button>
         </div>
