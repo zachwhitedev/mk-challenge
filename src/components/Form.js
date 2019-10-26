@@ -2,6 +2,9 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Logo from '../assets/mk-logo.png';
+const randomBytes = require('crypto').randomBytes;
+const AWS = require('aws-sdk');
+const ddb = new AWS.DynamoDB.DocumentClient();
 
 class Form extends React.Component {
     constructor(props){
@@ -21,25 +24,14 @@ class Form extends React.Component {
         this.setState({[e.target.name]: e.target.value})
     }
 
-    submitToAPI(e) {
-        this.props.confirm(true);
-        e.preventDefault();
-        const URL = "https://4x3mfgn2k0.execute-api.us-west-2.amazonaws.com/deploy-this-ok";
-        let entry = {
-            name: this.state.name,
-            email: this.state.email,
-            message: this.state.message
-        }
-
-    }
-
-    recordRide(rideId, username, unicorn) {
+    recordMessage() {
         return ddb.put({
-            TableName: 'Rides',
-            Item: {
-                RideId: rideId,
-                User: username,
-                Unicorn: unicorn,
+            TableName: 'Messages',
+            message: {
+                name: this.state.name,
+                email: this.state.email,
+                message: this.state.message,
+                id: Math.random() + 1,
                 RequestTime: new Date().toISOString(),
             },
         }).promise();
