@@ -1,0 +1,8 @@
+{
+    "Template": {
+        "TemplateName": "testtemplate",
+        "SubjectPart": "test email body",
+        "TextPart:": "test email body",
+        "HtmlPart": "<html><body><h1>test email body<\/h1><\/body><\/html>"
+    }
+}

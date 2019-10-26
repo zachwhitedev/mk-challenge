@@ -19,25 +19,25 @@ class Form extends React.Component {
         }
 
         this.handleFormChange = this.handleFormChange.bind(this);
-        this.recordMessage = this.recordMessage.bind(this);
+        // this.recordMessage = this.recordMessage.bind(this);
     }
 
     handleFormChange(e){
         this.setState({[e.target.name]: e.target.value})
     }
 
-    recordMessage() {
-        return ddb.put({
-            TableName: 'Messages',
-            message: {
-                name: this.state.name,
-                email: this.state.email,
-                message: this.state.message,
-                id: Math.random() + 1,
-                RequestTime: new Date().toISOString(),
-            },
-        }).promise();
-    }
+    // recordMessage() {
+    //     return ddb.put({
+    //         TableName: 'Messages',
+    //         message: {
+    //             name: this.state.name,
+    //             email: this.state.email,
+    //             message: this.state.message,
+    //             id: Math.random() + 1,
+    //             RequestTime: new Date().toISOString(),
+    //         },
+    //     }).promise();
+    // }
 
 
   render() {
