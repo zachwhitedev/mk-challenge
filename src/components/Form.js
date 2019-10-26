@@ -6,6 +6,8 @@ const randomBytes = require('crypto').randomBytes;
 const AWS = require('aws-sdk');
 const ddb = new AWS.DynamoDB.DocumentClient();
 
+// https://github.com/aws-samples/aws-serverless-workshops/tree/master/WebApplication
+
 class Form extends React.Component {
     constructor(props){
         super(props);
@@ -17,7 +19,7 @@ class Form extends React.Component {
         }
 
         this.handleFormChange = this.handleFormChange.bind(this);
-        this.submitToAPI = this.submitToAPI.bind(this);
+        this.recordMessage = this.submitToAPI.bind(this);
     }
 
     handleFormChange(e){
@@ -69,7 +71,7 @@ class Form extends React.Component {
                 rows={3}
                 rowsMax={6}
             />
-            <Button variant="contained" onClick={this.submitToAPI}>
+            <Button variant="contained" onClick={this.recordMessage}>
                 Submit
             </Button>
         </div>
