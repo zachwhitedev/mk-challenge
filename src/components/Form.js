@@ -29,6 +29,7 @@ class Form extends React.Component {
         }
 
         this.props.confirm(true);
+        console.log('hello');
     }
 
 
@@ -60,8 +61,8 @@ class Form extends React.Component {
                 margin="normal"
                 onChange={this.handleFormChange}
                 multiline={true}
-                rows={2}
-                rowsMax={3}
+                rows={3}
+                rowsMax={6}
             />
             <Button variant="contained" onClick={this.handleSubmit}>
                 Submit
